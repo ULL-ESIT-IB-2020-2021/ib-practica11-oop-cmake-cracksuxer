@@ -1,5 +1,5 @@
-#ifndef fecha
-#define fecha
+#ifndef _FECHA_
+#define _FECHA_
 
 class Date{
 private:
