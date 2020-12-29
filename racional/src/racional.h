@@ -13,11 +13,10 @@ public:
     friend bool operator==(const Racional &obj1, const Racional &rac);
     friend std::istream& operator>>(std::istream &stream_in, Racional &rac);
     friend std::ostream& operator<<(std::ostream &stream_out, const Racional &rac);
-    Racional operator+(const Racional &rac);
-    Racional operator-(const Racional &rac);
-    Racional operator*(const Racional &rac);                                             
-    Racional operator/(const Racional &rac);
-    void reduceFraction (double &num_, double &denom_);
+    Racional operator+(const Racional &rac) const;
+    Racional operator-(const Racional &rac) const;
+    Racional operator*(const Racional &rac) const;                                             
+    Racional operator/(const Racional &rac) const;
 };
 
 

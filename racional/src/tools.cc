@@ -34,7 +34,7 @@ int GetTotalLines(){
     return number_of_lines;
 }
 
-void Rac_map_objs(std::vector<std::string> num_denom, std::map<std::string, Racional*> &undefined_rac_objects, int &number){
+void RacMapObjs(std::vector<std::string> num_denom, std::map<std::string, Racional*> &undefined_rac_objects, int &number){
     for (std::string element: num_denom){
         int num, denom;
         std::replace(element.begin(), element.end(), '/', ' ');
@@ -64,7 +64,7 @@ std::map<std::string, Racional*> ParseRacionalesText(){
         std::vector<std::string> num_denom;
         num_denom.emplace_back(rac1);
         num_denom.emplace_back(rac2);
-        Rac_map_objs(num_denom, undefined_rac_objects, number);
+        RacMapObjs(num_denom, undefined_rac_objects, number);
     }
     return undefined_rac_objects;
 }
