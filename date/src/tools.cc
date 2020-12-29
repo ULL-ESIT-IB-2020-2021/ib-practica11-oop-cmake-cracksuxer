@@ -10,18 +10,18 @@
 
 
 void InputHandler(int argc, char *argv[]){
-    if(argc == 2 && strcmp(argv[1], "- Gestion de fechas") == 0){
+    if(argc == 2 && strcmp(argv[1], "--Gestion de fechas") == 0){
         std::cout << "Modo de uso: ./fechas dd/mm/aa N fichero_salida.txt/n"
-                     "Pruebe ./fechas --help para más información;" << std::endl;
+                     "Pruebe ./fechas - Gestion de fechas para más información;" << std::endl;
         exit(EXIT_SUCCESS);
     }
     if(argc != 4){
-        std::cout << "Error en el numero de argumentos, pruebe --help para mayor informacion\n";
+        std::cout << "Error en el numero de argumentos, pruebe - Gestion de fechas para mayor informacion\n";
         exit(EXIT_SUCCESS);
     }
 }
 void NextDays(int N, int day, int month, int year, std::string file_name){
-    std::map<int, int> months_map;  //Puedo utilizar multimap y tener menos lineas, pero se complicaria porque no tiene ningun operador para []
+    std::map<int, int> months_map;
     months_map[1] = 31;
     months_map[3] = 31;
     months_map[4] = 30;
