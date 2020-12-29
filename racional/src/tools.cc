@@ -42,7 +42,8 @@ void RacMapObjs(std::vector<std::string> num_denom, std::map<std::string, Racion
         while(ss >> num && ss >> denom){
             std::ostringstream name;
             name << "Racional_obj" << number;
-            undefined_rac_objects[name.str()] = new Racional(num, denom); 
+            undefined_rac_objects[name.str()] = new Racional(num, denom);
+            std::cout << "Created object: " << name.str() << std::endl;    //[Only Debug]
             number++;
         }
     }
@@ -72,14 +73,14 @@ std::map<std::string, Racional*> ParseRacionalesText(){
 void Output_operats(std::string file_name, std::map<std::string, Racional*> rac_file_objs){
     std::ofstream myfile(file_name);
     for(std::map<std::string, Racional*>::iterator itr = rac_file_objs.begin(); itr != rac_file_objs.end(); itr++){
-        std::cout << itr->first << std::endl;
         std::map<std::string, Racional*>::iterator paired_itr = rac_file_objs.find(itr->first);
         paired_itr++;
-        std::cout << paired_itr->first << std::endl;
-        double rac1_num = rac_file_objs[itr->first]->getNum();
-        double rac1_denom = rac_file_objs[itr->first]->getDenom();
-        double rac2_num = rac_file_objs[paired_itr->first]->getNum();
-        double rac2_denom = rac_file_objs[paired_itr->first]->getDenom();
+        std::cout << itr->first << " - Found!" << std::endl;
+        std::cout << paired_itr->first << " - Found!" << std::endl;
+        int rac1_num = rac_file_objs[itr->first]->getNum();
+        int rac1_denom = rac_file_objs[itr->first]->getDenom();
+        int rac2_num = rac_file_objs[paired_itr->first]->getNum();
+        int rac2_denom = rac_file_objs[paired_itr->first]->getDenom();
         myfile << rac1_num << "/" << rac1_denom << " + " << rac2_num << "/" << rac2_denom << " = " << rac_file_objs[itr->first]->operator+(*rac_file_objs[paired_itr->first]) << std::endl;
         myfile << rac1_num << "/" << rac1_denom << " - " << rac2_num << "/" << rac2_denom << " = " << rac_file_objs[itr->first]->operator-(*rac_file_objs[paired_itr->first]) << std::endl;
         myfile << rac1_num << "/" << rac1_denom << " * " << rac2_num << "/" << rac2_denom << " = " << rac_file_objs[itr->first]->operator*(*rac_file_objs[paired_itr->first]) << std::endl;

@@ -8,7 +8,7 @@ Complex::Complex(double real, double img) : real_(real), imag_(img){}
 Complex Complex::operator+(const Complex &obj) const { return Complex (real_ + obj.real_, imag_ + obj.imag_); }
 Complex Complex::operator-(const Complex &obj) const { return Complex (real_ - obj.real_, imag_ - obj.imag_); }
 Complex Complex::operator*(const Complex &obj) const { return Complex ((real_ * obj.real_ + -1 * (imag_ * obj.imag_)), (real_ * obj.imag_, imag_ * obj.real_ + real_ * obj.imag_)); }                                               
-Complex Complex::operator/(const Complex &obj) {
+Complex Complex::operator/(const Complex &obj){
     Complex conjugate_comp(obj.real_, -1 * obj.imag_); 
     double denom_real_part = pow(obj.real_, 2) + pow(obj.imag_, 2);
     double denom_imag_part = pow(obj.real_, 2) + pow(obj.imag_, 2);
