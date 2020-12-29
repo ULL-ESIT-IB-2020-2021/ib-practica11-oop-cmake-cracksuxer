@@ -31,7 +31,7 @@ void Complex::reduceFraction (double &num_, double &denom_){
             denom_ *= -1;
         }
     }
-    for (double i = denom_ * num_; i > 1; i--) {
+    for (double i = denom_ * num_; i > 1; i--) {                 //Poco eficiente
         if ((fmod(denom_, i) == 0) && (fmod(num_, i) == 0)) {  
             num_ /= i;  
             denom_ /= i;  
