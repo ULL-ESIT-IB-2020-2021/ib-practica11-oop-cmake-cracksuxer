@@ -3,7 +3,9 @@
 
 class Date{
 private:
-    int day_, month_, year_;
+    int day_;
+    int month_;
+    int year_;
 public:
     Date(int arg1 = 0, int arg2 = 0, int arg3 = 0);
     void setDay(int input);
