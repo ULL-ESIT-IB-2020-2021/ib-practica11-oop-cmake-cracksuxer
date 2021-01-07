@@ -85,6 +85,7 @@ void Output_operats(const std::string file_name, std::map<std::string, Racional*
         myfile << rac1_num << "/" << rac1_denom << " - " << rac2_num << "/" << rac2_denom << " = " << rac_file_objs[itr->first]->operator-(*rac_file_objs[paired_itr->first]) << std::endl;
         myfile << rac1_num << "/" << rac1_denom << " * " << rac2_num << "/" << rac2_denom << " = " << rac_file_objs[itr->first]->operator*(*rac_file_objs[paired_itr->first]) << std::endl;
         myfile << rac1_num << "/" << rac1_denom << " / " << rac2_num << "/" << rac2_denom << " = " << rac_file_objs[itr->first]->operator/(*rac_file_objs[paired_itr->first]) << std::endl;
+        std::cout << "\n";
         itr++;
     }
 }
