@@ -64,4 +64,4 @@ std::ostream &operator<<(std::ostream &stream_out, const Racional &obj) {
         } // else std::cout << "fmod(" << rac1_num << "," << i << ") == 0)" << " != " << "(fmod(" << rac1_denom << "," << i << ") == 0" << std::endl;  [Only Debug]
     }
     return stream_out << rac1_num << "/" << rac1_denom;
-};
+}

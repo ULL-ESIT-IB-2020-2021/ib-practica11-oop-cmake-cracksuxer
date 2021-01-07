@@ -44,7 +44,7 @@ void Complex::reduceFraction (double &num_, double &denom_){
     if(number_sign[num_] == "Negative" || number_sign[denom_] == "Negative") num_*= -1;
 }
 bool operator==(const Complex &obj1, const Complex &obj2){ return (obj1.real_ == obj2.real_) && (obj1.imag_ == obj2.imag_);}
-std::ostream& operator<<(std::ostream &stream_out, const Complex &obj){ return obj.imag_ < 0 ? stream_out << obj.real_ << obj.imag_ << "i" : stream_out << obj.real_ << " + " << obj.imag_ << "i"; };
+std::ostream& operator<<(std::ostream &stream_out, const Complex &obj){ return obj.imag_ < 0 ? stream_out << obj.real_ << obj.imag_ << "i" : stream_out << obj.real_ << " + " << obj.imag_ << "i"; }
 std::istream& operator>>(std::istream &stream_in, Complex &obj){
     std::cout << "Real part: ";
     while(!(stream_in >> obj.real_)){
