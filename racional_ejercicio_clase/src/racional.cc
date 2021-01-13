@@ -82,6 +82,7 @@ double Racional::fileRacsMean(){
     std::ifstream intput_file("rac.txt");
     std::string line;
     double media{0};
+
     int lines{0};
     while(getline(intput_file, line)){
         std::string rac1_file = line.substr(0, 3);
